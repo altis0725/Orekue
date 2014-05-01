@@ -1,0 +1,145 @@
+package jp.magusa.orekue.servlet;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import jp.magusa.orekue.database.DatabaseUtil;
+import jp.magusa.orekue.model.OActivity;
+import jp.magusa.orekue.model.OResponse;
+import jp.magusa.orekue.model.User;
+
+/**
+ * Servlet implementation class PostActivity
+ */
+@WebServlet("/PostActivity")
+public class PostActivity extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private static final boolean DEBUG = true;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public PostActivity() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+    
+    public static OResponse< OActivity > postActivity( OActivity o ){
+    	OResponse< OActivity > resp = new OResponse< OActivity >( o );
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try{
+			Class.forName( "org.sqlite.JDBC" );
+			conn = DriverManager.getConnection( "jdbc:sqlite:" + DatabaseUtil.DATABASE_FILENAME );
+			
+			String sql = "INSERT INTO activity_table(time_stamp,content,user_id,duration,date,category_id,tag_id) VALUES(?,?,?,?,?,?,?);";
+		
+			pstmt = conn.prepareStatement( sql );
+			pstmt.setLong(1,o.getTimeStamp() );
+			pstmt.setString(2,o.getContent() );
+			pstmt.setLong(3,o.getUserId() );
+			pstmt.setLong(4,o.getDuration() );
+			pstmt.setLong(5,o.getDate() );
+			pstmt.setLong(6,o.getCategoryId() );
+			pstmt.setLong(7,o.getTagId() );
+			
+			pstmt.executeUpdate();
+			
+		} catch( SQLException e ){
+			resp.setErrorCode( OResponse.ERR_SQL_EXCEPTION );
+			resp.setErrorMessage( "SQLException:" + e.toString() );
+			e.printStackTrace();
+		} catch( ClassNotFoundException e ){
+			resp.setErrorCode( OResponse.ERR_UNKNOWN );
+			resp.setErrorMessage( "ClassNotFoundException:" + e.toString() );
+			e.printStackTrace();
+		} finally{
+			if( conn != null ){
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			if( pstmt != null ){
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
+		return resp;
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		OResponse< OActivity > resp = new OResponse< OActivity >( null );
+		
+		
+		try {
+			
+			Long user_id = Long.parseLong( request.getParameter( "user_id" ) );
+			Long tag_id = Long.parseLong( request.getParameter( "tag_id" ) );
+			Long category_id = Long.parseLong( request.getParameter( "category_id" ) );
+			Long duration = Long.parseLong( request.getParameter( "duration" ) );
+			Long date = Long.parseLong( request.getParameter( "date" ) );
+			String content = request.getParameter( "content" );
+			
+			OResponse< User > user = GetUser.getUser(user_id);
+			// TODO 経験値取得とレベルアップの処理を書く
+
+			OActivity oa = new OActivity();
+			oa.setUserId(user_id);
+			oa.setTagId(tag_id);
+			oa.setCategoryId(category_id);
+			oa.setDuration(duration);
+			oa.setDate(date);
+			oa.setContent(content);
+			
+			oa.setTimeStamp( DatabaseUtil.getTime() );
+			
+			resp = postActivity( oa );
+			
+		} catch ( NullPointerException e ){
+			resp.setErrorCode( OResponse.ERR_INVALID_PARAMETER );
+			resp.setErrorMessage( "パラメータが不正です。" );
+			e.printStackTrace();
+		} catch ( NumberFormatException e ){
+			resp.setErrorCode( OResponse.ERR_INVALID_PARAMETER );
+			resp.setErrorMessage( "パラメータが不正です。" );
+			e.printStackTrace();
+		}
+		
+		Gson gson = new Gson();
+		response.setContentType("application/json; charset=utf-8");
+		response.getWriter().write( gson.toJson( resp ) );
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		if (DEBUG) doPost(request, response);
+	}
+
+}

@@ -1,0 +1,5 @@
+/build
+/bin
+.classpath
+Thumbs.db
+.DS_Store
