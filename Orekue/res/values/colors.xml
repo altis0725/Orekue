@@ -1,0 +1,19 @@
+<resources>
+
+    <color name="header_bg">#dd313131</color>
+    <color name="header_title_text_color">#ffefefef</color>
+    <color name="bg_tab_content">#ccd0d0d0</color>
+    <color name="post_dialog_title_color">#ffffffff</color>
+    <color name="post_dialog_tag_color">#ffffffff</color>
+    <color name="post_dialog_window_color">#ff9f7060</color>
+    <color name="post_dialog_block_color">#ff9f7060</color>
+    <color name="post_dialog_input_color">#ffffefd5</color>
+    <color name="deep_color">#604339</color>
+    <color name="middle_color">#9F7060</color>
+    <color name="light_color">#FFEFD5</color>
+    <color name="other_color">#8D6449</color>
+    <color name="checked_color">#FFCC33</color>
+    
+    <color name="timeline_list_bg">#B5A642</color>
+  <color name="homelog_title_color">#B5A642</color>
+</resources>

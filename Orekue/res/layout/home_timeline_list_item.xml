@@ -1,0 +1,109 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="8dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/frame"
+        android:padding="8dp" >
+
+        <ImageView
+            android:id="@+id/hl_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/hl_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/hl_duration"
+            android:layout_alignBottom="@+id/hl_duration"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/hl_duration"
+            android:text="hl_point" />
+
+        <TextView
+            android:id="@+id/hl_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/hl_image"
+            android:layout_alignRight="@+id/hl_image"
+            android:layout_below="@+id/hl_image"
+            android:gravity="center"
+            android:text="hl_level" />
+
+        <TextView
+            android:id="@+id/hl_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/hl_image"
+            android:layout_toRightOf="@+id/hl_level"
+            android:paddingLeft="10dp"
+            android:text="hl_pre" />
+
+        <TextView
+            android:id="@+id/hl_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hl_pre"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/hl_image"
+            android:text="hl_name"
+            android:textColor="#805a44"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hl_job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/hl_pre"
+            android:layout_alignBottom="@+id/hl_pre"
+            android:layout_toRightOf="@+id/hl_pre"
+            android:layout_weight="1"
+            android:text="hl_job" />
+
+        <TextView
+            android:id="@+id/hl_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/hl_name"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/hl_job"
+            android:text="hl_duration"
+            android:textColor="#777" />
+
+        <TextView
+            android:id="@+id/hl_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/hl_name"
+            android:layout_below="@+id/hl_name"
+            android:text="hl_tag" />
+
+        <TextView
+            android:id="@+id/hl_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/hl_duration"
+            android:layout_below="@+id/hl_duration"
+            android:text="hl_text" />
+
+        <TextView
+            android:id="@+id/hl_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="hl_date"
+            android:textColor="#777" />
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,130 @@
+
+<!DOCTYPE html >
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="./libraries/RGraph.common.core.js" ></script>
+	<script src="./libraries/RGraph.common.dynamic.js" ></script>
+	<script src="./libraries/RGraph.common.tooltips.js" ></script>
+	<script src="./libraries/RGraph.common.effects.js" ></script>
+	<script src="./libraries/RGraph.common.key.js"></script>
+	<script src="./libraries/RGraph.line.js" ></script>
+	<script src="./libraries/jquery.min.js" ></script>
+	
+	<style type="text/css">
+		@font-face {
+			font-family: 'misaki';
+			src: url('fonts/misaki_gothic.ttf') format('truetype');
+		}
+		body {
+	 		font-family: misaki;
+		}
+	</style>
+	<title>A curvy Line chart with multiple lines</title>
+	</head>
+	<body bgcolor="#FFEFD5">
+	<canvas id="cvs" width="600px" height="350px">[No canvas support]</canvas>
+	
+	<script>
+	window.onload = function (){
+	//URLParameterを取得
+		var study = new Array();
+		var exe = new Array();
+		var commu = new Array();
+		var fashion = new Array();
+		var society = new Array();
+		var art = new Array();
+		var dates = new Array();
+		
+		var pair=location.search.substring(1).split('&');
+		for(i=0, n = pair.length; i < n;i++) {
+				var kv = pair[i].split('=');
+				if(kv[0].match("st")){
+					study.push(parseInt(kv[1]));
+				}else if(kv[0].match("ex")){
+					//exe[exe.length] = parseInt(kv[1]);
+					exe.push(parseInt(kv[1]));
+				}else if(kv[0].match("co")){
+					//commu[commu.length] = parseInt(kv[1]);
+					commu.push(parseInt(kv[1]));
+				}else if(kv[0].match("fa")){
+					//fashion[fashion.length] = parseInt(kv[1]);
+					fashion.push(parseInt(kv[1]));
+				}else if(kv[0].match("so")){
+					//society[society.length] = parseInt(kv[1]);
+					society.push(parseInt(kv[1]));
+				}else if(kv[0].match("ar")){
+					//art[art.length] = parseInt(kv[1]);
+					art.push(parseInt(kv[1]));
+				}else if(kv[0].match("tu")){
+					//kv[1] = "11month17day20hour46min";
+					var kv = kv[1].replace("month","/");
+					kv = kv.replace("day"," ");
+					kv = kv.replace("hour",":");
+					kv = kv.replace("min","");
+					kv = kv.replace("year","/");
+					dates.push(kv);
+					//dates[dates.length] = kv;
+					//dates[dates.length] = "11month17day20hour46min";
+				}
+			}
+	
+	       var line = new RGraph.Line('cvs', 
+	       		study, 
+	       		exe, 
+	       		commu,
+	       		fashion,
+	       		society,
+	       		art)
+	           //.Set('curvy', true)
+	           //.Set('tickmarks', true)
+	           //.Set('tickmarks.fill', null)
+	           //.Set('tickmarks.stroke', '#aaa')
+	           //.Set('tickmarks.stroke.linewidth', 2)
+	           //.Set('tickmarks.size', 5)
+	           .Set('colors', ['#f00', '#0f0', '#00f', '#f0f', '#e6ac00', '#0ff'])
+	           .Set('linewidth', 2)
+	           .Set('text.size', 12)
+	           .Set('labels', dates)
+	           .Set('text.font', 'misaki')
+	           .Set('gutter.left', 70)
+	           .Set('gutter.right', 70)
+	           //.Set('tooltips', ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'])
+	           .Set('key', ['勉強','運動','コミュ','ファッション','社会勉強','芸術'])
+	           .Set('key.position', 'gutter')
+	           //.Set('key.background','white')
+	           //.Set('key.position.gutter.boxed', true)
+	           //.Set('key.halign', 'left')
+	           //.Set('key.position.x','right')
+	           //.Set('tickmarks', 'circle')
+	           //.Draw();
+	           
+	           
+	           
+	       RGraph.Effects.Line.jQuery.Trace(line);
+	       /*var line2 = new RGraph.Line('myLine', [8,4,2,5,6,4,3,7,8,9,7,6], [4,3,1,6,5,8,4,9,8,7,4,6])
+	       .Set('key', ['Richard', 'Fred'])
+	       .Set('title', 'A line chart showing the key in graph mode')
+	       .Set('key.position', 'graph')
+	       .Set('key.shadow', true)
+	       .Set('key.shadow.offsetx', 0)
+	       .Set('key.shadow.offsety', 0)
+	       .Set('key.shadow.blur', 15)
+	       .Set('key.shadow.color', '#ccc')
+	       .Set('hmargin', 5)
+	       .Set('linewidth', 3)
+	       .Set('labels', ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'])
+	       .Draw();*/
+	   }
+	   // 半角英数字文字列を全角文字列に変換する
+	   String.prototype.toTwoByteAlphaNumeric = function(){
+	       return this.replace(/[A-Za-z0-9]/g, function(s) {
+	           return String.fromCharCode(s.charCodeAt(0) + 0xFEE0);
+	       });
+	   }
+	    
+	</script>
+
+</body>
+</html>

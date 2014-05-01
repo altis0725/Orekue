@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BottomTabActivity" >
+
+    <LinearLayout
+        android:id="@+id/layout_tabs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#ff00162e"
+        android:orientation="horizontal" >
+
+        <ToggleButton
+            android:id="@+id/tab_1"
+            android:padding="@dimen/tab_btn_padding"
+            android:drawableTop="@drawable/home_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab"
+            android:checked="true"
+            android:gravity="center"
+            android:textColor="@color/text_tab"
+            android:textOff="@string/tab_1"
+            android:textOn="@string/tab_1" />
+
+        <ToggleButton
+            android:id="@+id/tab_2"
+            android:padding="@dimen/tab_btn_padding"
+            android:drawableTop="@drawable/talk_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab"
+            android:checked="false"
+            android:gravity="center"
+            android:textColor="@color/text_tab"
+            android:textOff="@string/tab_2"
+            android:textOn="@string/tab_2" />
+
+        <ToggleButton
+            android:id="@+id/tab_3"
+            android:padding="@dimen/tab_btn_padding"
+            android:drawableTop="@drawable/sight_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab"
+            android:gravity="center"
+            android:textColor="@color/text_tab"
+
+            android:textOff="@string/tab_3"
+            android:textOn="@string/tab_3" />
+
+        <ToggleButton
+            android:id="@+id/tab_4"
+            android:padding="@dimen/tab_btn_padding"
+            android:drawableTop="@drawable/card_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab"
+            android:gravity="center"
+            android:textColor="@color/text_tab"
+            android:textOff="@string/tab_4"
+            android:textOn="@string/tab_4" />
+        
+        
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/layout_tabs" >
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

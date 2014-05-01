@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/middle_color" >
+    
+   　<LinearLayout
+    	android:id="@+id/friend_top_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/friends_button_ranking"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="➤ らんきんぐ"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/friends_button_friendlist"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="➤ 友達りすと"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/friends_button_exchange"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="➤ 友達づくり"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
+        
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/friends_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame" >
+
+        <TextView
+            android:id="@+id/friends_initText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="上のボタンから選択してください。"
+            android:ems="10" />
+
+    </FrameLayout>
+
+</LinearLayout>

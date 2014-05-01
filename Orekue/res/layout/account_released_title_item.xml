@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jp.magusa.orekue.android.status.AccountCustomLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TACL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_frame"
+    android:checkMark="?android:attr/listChoiceIndicatorSingle"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="5dp" >
+
+    <ImageView
+        android:id="@+id/released_title_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="2dp" />
+
+    <TextView
+        android:id="@+id/released_title_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textSize="@dimen/account_setting_text_size" />
+    
+    <RadioButton
+        android:id="@+id/rbtn_released_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:layout_margin="2dp"
+        android:checkMark="?android:attr/listChoiceIndicatorSingle"
+        android:clickable="false"
+        android:focusable="false" />
+
+</jp.magusa.orekue.android.status.AccountCustomLayout>

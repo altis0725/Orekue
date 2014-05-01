@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <stroke
+        android:width="2dp"
+        android:color="#A0522D" >
+    </stroke>
+
+    <padding
+        android:bottom="3dp"
+        android:left="3dp"
+        android:right="3dp"
+        android:top="3dp" />
+
+    <corners
+        android:bottomLeftRadius="0.01dp"
+        android:bottomRightRadius="0.01dp"
+        android:topLeftRadius="0.01dp"
+        android:topRightRadius="0.01dp" />
+
+    <solid android:color="@color/post_dialog_input_color" >
+    </solid>
+
+</shape>

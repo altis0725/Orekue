@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+    <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta name="viewport" content="width=device-width">
+	    <title>Chart.jsで描く円グラフ</title>
+	    <!-- インクルード -->
+	    <script type="text/javascript" src="Chart.js"></script>
+	    <style type="text/css">
+	   		@font-face {
+				font-family: 'misaki';
+				src: url('fonts/misaki_gothic.ttf') format('truetype');
+			}
+			body {
+				font-family: misaki;
+			}
+			.cut {
+				position:relative;
+				float: left;
+				overflow: hidden; /*不要部分切り取り*/
+				height: 300px; /*変更したい高さ*/
+				width: 355px; /*変更したい幅*/
+				display: block; /*SPANなのでブロック要素に*/
+			}
+			.cut_image {
+				display: block; 
+				height: 450px;
+				position: absolute;
+				left: -45px; 
+				top: -80px; 
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function() {
+				//URLParameterを取得
+		 		var arg = new Object;
+		 		var pair=location.search.substring(1).split('&');
+		 		for(i=0;pair[i];i++) {
+		   		var kv = pair[i].split('=');
+		   		arg[kv[0]]=parseInt(kv[1]);
+		  		}
+		  		<!-- レーダーチャート用データ -->
+				var RCData = {
+		        		labels : ["勉強","運動","コミュ","ファッション","社会勉強","芸術"],
+		        		datasets : [ {
+							fillColor : "rgba(22,220,220,0.5)",
+							strokeColor : "rgba(220,220,220,1)",
+							pointColor : "rgba(220,220,220,1)",
+							pointStrokeColor : "#fff",
+							data : [arg["p1"],arg["p2"],arg["p3"],arg["p4"],arg["p5"],arg["p6"]]
+		        			}
+		        		]
+		        }
+		        <!-- オプション項目セット -->
+		        var RCOption = {
+			        	// 値のラインが棒グラフの値の上にかぶさるようにするか
+			        	scaleOverlay : true,
+						// 中央からポイントラベルに向かう線の色
+						//angleLineColor : "#FFF",
+			       		// ポイントラベルの色
+			       		//pointLabelFontColor : "#FFF",
+			       		// ラベルの文字色
+			       		//scaleFontColor : "#FFF",
+			       		// ポイントラベルのサイズ
+	    				pointLabelFontSize :15,
+			       		// ラベルの表示
+			       		scaleShowLabels : true,
+			       		// ラベルの背景色を塗りつぶすか
+			       	    scaleShowLabelBackdrop : false,
+			       	 	// ラベルのフォントサイズ
+			       	    scaleFontSize : 18,
+			       		// アニメーション有無
+		                animation : true,
+		                //フォント
+		                scaleFontFamily : "'misaki'",
+		                pointLabelFontFamily : "'misaki'",
+				};
+				<!-- 円グラフ描画 -->
+				var canvas = document.getElementById("radarchart");
+
+				var myRC = new Chart(canvas.getContext("2d")).Radar(RCData,RCOption);
+			}
+		</script>
+    </head>
+    <body bgcolor="#FFEFD5">
+        <!-- 描画エリア -->
+        <span class="cut">
+        <canvas class="cut_image" id="radarchart" height="450px" width="450px"></canvas>
+        </span>
+    </body>
+</html>

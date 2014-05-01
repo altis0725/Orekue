@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gacha"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/middle_color"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="649dp" >
+
+        <LinearLayout
+            android:id="@+id/gacha_main"
+            android:layout_width="match_parent"
+            android:layout_height="649dp"
+            android:background="@drawable/frame"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="400dp"
+                android:layout_height="380dp" >
+
+                <ViewSwitcher
+                    android:id="@+id/view_switcher"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/sora_1" />
+
+                    <ViewFlipper
+                        android:id="@+id/flipper"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autoStart="false"
+                        android:flipInterval="50" />
+                </ViewSwitcher>
+
+                <ImageView
+                    android:id="@+id/honkan_bottom"
+                    android:layout_width="320dp"
+                    android:layout_height="66dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/honkan_02" />
+
+                <ImageView
+                    android:id="@+id/card"
+                    android:layout_width="88dp"
+                    android:layout_height="24dp"
+                    android:layout_alignBottom="@+id/honkan_top"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/card" />
+
+                <ImageView
+                    android:id="@+id/honkan_top"
+                    android:layout_width="320dp"
+                    android:layout_height="223dp"
+                    android:layout_above="@+id/honkan_bottom"
+                    android:layout_alignLeft="@+id/honkan_bottom"
+                    android:src="@drawable/honkan_01" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="398dp"
+                android:layout_height="120dp" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/jimen" />
+
+                <ImageView
+                    android:id="@+id/shadow_card"
+                    android:layout_width="88dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/card_kage"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/gacha_mymoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/gacha_money" />
+
+            <Button
+                android:id="@+id/button_send"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/gacha_draw" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button_gacha_items"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/gacha_list"
+        android:textColor="#FFF" />
+
+</RelativeLayout>

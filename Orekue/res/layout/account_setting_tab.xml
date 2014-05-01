@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/middle_color"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/string_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/other_color"
+        android:paddingBottom="3dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="3dp"
+        android:text="アバター"
+        android:textColor="#FFF"
+        android:textSize="@dimen/account_setting_text_size" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/frame" >
+
+        <ImageView
+            android:id="@+id/imageView_setting_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_change_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/status_button_size"
+            android:layout_gravity="center_vertical"
+            android:text="へんこう" />
+
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/string_prefix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/other_color"
+        android:paddingBottom="3dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="3dp"
+        android:text="@string/prefix"
+        android:textColor="#fff"
+        android:textSize="@dimen/account_setting_text_size" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/frame" >
+
+        <TextView
+            android:id="@+id/textView_released_prefix"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="@dimen/account_setting_text_size" />
+
+        <Button
+            android:id="@+id/btn_change_prefix"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/status_button_size"
+            android:layout_gravity="center_vertical"
+            android:text="へんこう" />
+
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/string_avater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/other_color"
+        android:paddingBottom="3dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="3dp"
+        android:text="@string/title"
+        android:textColor="#FFF"
+        android:textSize="@dimen/account_setting_text_size" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/frame" >
+
+        <ImageView
+            android:id="@+id/imageView_released_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView_released_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:textSize="@dimen/account_setting_text_size" />
+
+        <Button
+            android:id="@+id/btn_change_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/status_button_size"
+            android:layout_gravity="center_vertical"
+            android:text="へんこう" />
+
+    </LinearLayout>
+    
+
+    
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btn_return"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/status_button_size"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:text="➤ もどる"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/btn_enter"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/status_button_size"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_toLeftOf="@+id/btn_return"
+            android:text="➤ けってい"
+            android:textColor="#FFF" />
+
+    </RelativeLayout>
+
+</LinearLayout>

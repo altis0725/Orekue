@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/post_dialog_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/post_dialog_window_color"
+    android:padding="8dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:background="@drawable/post_dialog_input"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/post_activity_date_title" >
+            </TextView>
+
+            <DatePicker
+                android:id="@+id/post_activity_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:calendarViewShown="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:background="@drawable/post_dialog_input"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/post_activity_start_time_title" >
+            </TextView>
+
+            <TimePicker
+                android:id="@+id/post_activity_start_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:isScrollContainer="false"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/post_dialog_block"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/post_dialog_block"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/post_category_title"
+                    android:textColor="@color/post_dialog_tag_color" >
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/post_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/post_dialog_input"
+                    android:entries="@array/category" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/post_dialog_block"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/post_tag_title"
+                    android:textColor="@color/post_dialog_tag_color" >
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/post_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/post_dialog_input"
+                    android:entries="@array/tag" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/post_dialog_block"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="@string/post_time_title"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/post_dialog_tag_color" >
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/post_dialog_block"
+                android:orientation="horizontal" >
+
+                <Spinner
+                    android:id="@+id/post_time_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/post_dialog_input"
+                    android:gravity="center"
+                    android:drawSelectorOnTop="false"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/post_time_hours"
+                    android:textColor="@color/post_dialog_tag_color" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/post_dialog_block"
+                android:orientation="horizontal" >
+
+                <Spinner
+                    android:id="@+id/post_time_minutes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/post_dialog_input"
+                    android:gravity="center"
+                    android:drawSelectorOnTop="false"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/post_time_minutes"
+                    android:textColor="@color/post_dialog_tag_color" >
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/post_edit_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/post_dialog_input_color"
+            android:hint="@string/post_edit_message"
+            android:maxLines="3"
+            android:minLines="3"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/post_dialog_block"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/post_button_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/post_button_send"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/post_button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/post_button_cancel"
+            android:textColor="#FFF" />
+
+    </LinearLayout>
+
+</LinearLayout>

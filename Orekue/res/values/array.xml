@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>    
+    <string-array name="category">
+        <item>@string/category_study</item>
+        <item>@string/category_sports</item>
+        <item>@string/category_fashion</item>
+        <item>@string/category_social_study</item>
+        <item>@string/category_communication</item>
+        <item>@string/category_art</item>
+    </string-array>
+    
+    <string-array name="tag">
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+        <item>d</item>
+        <item>e</item>
+        <item>f</item>
+        <item>g</item>
+        <item>h</item>
+    </string-array>
+    
+    
+     <string-array name="time_hours">
+        <item>０</item> 
+        <item>１</item>
+        <item>２</item>
+        <item>３</item>
+        <item>４</item>
+        <item>５</item>
+        <item>６</item>
+        <item>７</item>
+        <item>８</item>
+        <item>９</item>
+        <item>１０</item>
+        <item>１１</item>
+        <item>１２</item>
+    </string-array>
+     <string-array name="time_minutes">
+        <item>０</item>
+        <item>１０</item>
+        <item>２０</item>
+        <item>３０</item>
+        <item>４０</item>
+        <item>５０</item>
+    </string-array>
+    
+    
+    
+    
+</resources>

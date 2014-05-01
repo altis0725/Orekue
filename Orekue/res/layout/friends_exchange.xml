@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/friends_makeFriendInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="友達登録するには送信ボタンを押してください。この状態で受信も出来ます。"
+        />
+
+    <Button
+        android:id="@+id/btn_beam"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="送信する"
+        android:textColor="@color/deep_color"
+        android:textSize="12sp"  />
+    
+    <Button
+        android:id="@+id/btn_beamCancel"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="キャンセル"
+        android:textColor="@color/deep_color"
+        android:textSize="12sp" />
+
+</LinearLayout>
